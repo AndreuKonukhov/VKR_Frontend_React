@@ -1,0 +1,12 @@
+.window {
+    grid-area: h;
+    background-color: rgba(247, 209, 209, 0.942);
+    height: 100vh;
+  }
+
+.img{
+  height: 60px;
+  width: 60px;
+}
+
+
