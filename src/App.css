@@ -1,12 +1,11 @@
 .app-wriper {
   display: grid;
-  background-color: white;
+  /* background: #343434; */
 
   grid-template-areas: 
-  "h h"
   "n c";
   grid-template-rows: 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 2fr 9fr;
   grid-gap: 3px;
 
   /* grid-gap: 10px; */

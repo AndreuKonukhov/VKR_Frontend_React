@@ -11,7 +11,7 @@ const App = (props) => {
   return (
     <BrowserRouter>
       <div className='app-wriper'>
-        <Header name = 'Андрей'/>
+        {/* <Header name = 'Андрей'/> */}
         <Navbar />
         <div>
           <Routes>

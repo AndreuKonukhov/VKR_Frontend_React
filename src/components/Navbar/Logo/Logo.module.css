@@ -1,0 +1,14 @@
+.Logo {
+    background-color: rgba(217, 217, 217, 0.793);
+  }
+
+.MDP {
+  color: #15458A;
+
+font-family: R;
+font-size: 32px;
+font-style: normal;
+font-weight: 900;
+line-height: 40px; /* 125% */
+letter-spacing: 4.8px;
+}
