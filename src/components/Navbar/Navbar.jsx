@@ -5,7 +5,9 @@ import Logo from "./Logo/Logo";
 const Navbar = () => {
     return (
         <nav className={s.Navbar}>
-            <Logo/>
+            <Logo/>  
+            <hr className={s.Line}/>
+            
             {/* <div className={s.item}>
                 <NavLink to='/profile'
                     className={ActiveLink()}

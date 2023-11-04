@@ -7,7 +7,6 @@ import Dialog from './components/Dialog/Dialog';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
 const App = (props) => {
-  debugger;
   return (
     <BrowserRouter>
       <div className='app-wriper'>

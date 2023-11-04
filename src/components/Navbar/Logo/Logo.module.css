@@ -1,14 +1,35 @@
-.Logo {
-    background-color: rgba(217, 217, 217, 0.793);
-  }
+.logo{
+  text-align: center;
+  position: relative;
+  display: flex;
+  padding: 10px 40px;
+  height: 80px;
+}
 
-.MDP {
-  color: #15458A;
-
-font-family: R;
+.mdp {
+color: #15458A;
+font-family: "RobotoFlex";
 font-size: 32px;
-font-style: normal;
-font-weight: 900;
-line-height: 40px; /* 125% */
-letter-spacing: 4.8px;
+font-weight: 1000;
+letter-spacing: 5.5px;
+margin: auto;
+display:inline-block;
+}
+
+.INS {
+  color: #e1e1e1;
+  
+  font-family: "RobotoFlex";
+  font-size: 32px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  margin: auto;
+  display:inline-block;
+}
+
+.img{
+  display: inline-block;
+  /* margin: 10px 0 0 0; */
+  margin: auto;
+  width: 60px; 
 }
