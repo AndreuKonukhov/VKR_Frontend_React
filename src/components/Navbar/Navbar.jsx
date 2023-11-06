@@ -2,12 +2,17 @@ import React from "react";
 import s from './Navbar.module.css'
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo/Logo";
+import User from "./User/User";
+import ListSech from "./ListSech/ListSech";
 const Navbar = () => {
     return (
         <nav className={s.Navbar}>
             <Logo/>  
-            <hr className={s.Line}/>
-            
+            <hr className={s.upperLine}/>
+            <ListSech/>
+            <hr className={s.downLine}/>
+            <User/>
+
             {/* <div className={s.item}>
                 <NavLink to='/profile'
                     className={ActiveLink()}

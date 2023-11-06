@@ -1,0 +1,36 @@
+.user{
+    height: 40px;
+    /* Эллемент является контейнером flex */
+    display: flex;
+    /* Если содержимое колонки не влазит - перенести на новую строку */
+    flex-wrap: wrap;
+    /* Слева на право */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    /* text-align: right; */
+}
+
+.name{
+    font-family: "RobotoFlex";
+    font-size: 15px;
+    color: #e1e1e1;
+    font-weight: 200;
+    letter-spacing: 3px;
+}
+
+.role{
+    font-family: "RobotoFlex";
+    font-style: italic;
+    font-size: 12px;
+    color: #ababab;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.user_icon{
+    height: 25px;
+    filter: invert(70%);
+}
+
