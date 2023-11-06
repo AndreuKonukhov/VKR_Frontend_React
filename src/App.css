@@ -2,11 +2,64 @@
   display: grid;
   /* background: #343434; */
 
-  grid-template-areas: 
-  "n c";
+  grid-template-areas:
+    "n c";
   grid-template-rows: 1fr;
   grid-template-columns: 2fr 9fr;
   grid-gap: 3px;
 
   /* grid-gap: 10px; */
+}
+
+.sun{
+  position: absolute;
+  top: 212px;
+  left: 595px;
+  height: 488px;
+  
+}
+
+.luch {
+  margin-left: auto;
+  margin-right: auto;
+  top: 100px;
+
+  width: 1000px;
+}
+
+.luch:hover{
+  transform: 500px 0px;
+  transform-origin: 49.94% 48.3%;
+  animation: spin1 5s infinite linear;
+  /* animation: 25s linear 0s normal none infinite running rot;
+  -webkit-animation: 15s linear 0s normal none infinite running rot; */
+}
+
+@keyframes spin1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

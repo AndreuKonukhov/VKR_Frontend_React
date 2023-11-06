@@ -5,6 +5,8 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import Dialog from './components/Dialog/Dialog';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import sun from './Resources/Center.png'
+import luch from './Resources/Luch.png'
 
 const App = (props) => {
   return (
@@ -12,6 +14,11 @@ const App = (props) => {
       <div className='app-wriper'>
         {/* <Header name = 'Андрей'/> */}
         <Navbar />
+        <div>
+          <img className='sun' src = {sun}/>
+          <img className='luch' src = {luch}/>
+        </div>
+
         <div>
           <Routes>
             <Route path='/dialog' element={<Dialog sechen={props.state} />}/>

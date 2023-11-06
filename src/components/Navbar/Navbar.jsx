@@ -8,9 +8,9 @@ const Navbar = () => {
     return (
         <nav className={s.Navbar}>
             <Logo/>  
-            <hr className={s.upperLine}/>
+            
             <ListSech/>
-            <hr className={s.downLine}/>
+            <button class={s.glow_on_hover} type="button">Добавить сечение</button>
             <User/>
 
             {/* <div className={s.item}>

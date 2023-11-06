@@ -15,7 +15,6 @@ font-weight: 800;
 letter-spacing: 5.5px;
 
 margin: auto;
-
 position: relative;
 display:inline-block;
 background-image: linear-gradient(45deg, #15458A 20%, #6f748c 100%);
@@ -39,4 +38,13 @@ background-image: linear-gradient(45deg, #15458A 20%, #6f748c 100%);
   /* margin: 10px 0 0 0; */
   margin: auto;
   width: 60px; 
+}
+
+.upperLine {
+  margin: auto;
+  width: 90%;
+	height: 1px;
+	border: none;
+	border-top: 2px solid #4f4f4f;
+  border-radius: 2px;
 }

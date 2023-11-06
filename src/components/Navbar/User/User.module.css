@@ -1,4 +1,4 @@
-.user{
+.footer {
     height: 40px;
     /* Эллемент является контейнером flex */
     display: flex;
@@ -6,22 +6,21 @@
     flex-wrap: wrap;
     /* Слева на право */
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 7px;
+    padding: 5px 15px ;
+
     /* text-align: right; */
 }
 
-.name{
-    font-family: "RobotoFlex";
+.name {
     font-size: 15px;
-    color: #e1e1e1;
+    color: #f1f1f1;
     font-weight: 200;
     letter-spacing: 3px;
 }
 
-.role{
-    font-family: "RobotoFlex";
+.role {
     font-style: italic;
     font-size: 12px;
     color: #ababab;
@@ -29,8 +28,31 @@
     letter-spacing: 1px;
 }
 
-.user_icon{
+.user_icon {
+    margin: 0 7px;
     height: 25px;
-    filter: invert(70%);
+    filter: invert(80%);
 }
 
+.exit_icon {
+    height: 25px;
+}
+
+
+.downLine {
+    margin: auto;
+    width: 90%;
+    height: 2px;
+    border: none;
+    border-top: 2px solid #706f6f;
+    border-radius: 2px;
+
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: "RobotoFlex";
+
+}
