@@ -2,7 +2,7 @@
     height: 78%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     border-radius: 10px;
     background-color: rgba(133, 141, 146, 0.1);
@@ -16,69 +16,45 @@
     font-family: "RobotoFlex";
     font-size: 18px;
     letter-spacing: 1.5px;
-    font-weight: 1;
+    font-weight: lighter;
 }
 
-.container {
-    position: relative;
-    padding: 20px 50px;
+.search {
+    height: 24px;
+    width: 90%;
+    margin: 5px 0 0 0;
+    font-family: "RobotoFlex";
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    transition: transform 250ms ease-in-out;
+    font-size: 15px;
+    color: #c0c0c0;
+    background-color: rgba(229, 229, 230, 0.1);
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% center;
+    border-radius: 15px;
+    border: none;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
 }
 
-.input {
-
-    border: 3px solid #fff;
-    background: transparent;
-
-    border-radius: 50px;
-    outline: none;
-    font-size: 18px;
-    color: #fff;
-    font-weight: bold;
-    letter-spacing: 1px;
+.search:hover {
+    padding: 12px 0 0 0;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 2px solid rgba(1, 84, 209, 0.479);
+    border-radius: 0;
+    background-position: 100% center;
 }
 
-.close_btn {
-    position: absolute;
-    top: 27px;
-    right: 80px;
-    font-size: 35px;
-    cursor: pointer;
-    color: #ffffff;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-::placeholder {
-    /* Chrome/Opera/Safari */
-    color: #ee3f3f;
-    font-family: Roboto;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.input.active {
-    opacity: 1;
-    animation: animate 0.5s linear;
-}
-
-@keyframes animate {
-    0% {
-        transform: scale(1);
-    }
-
-    25% {
-        transform: scale(1.2);
-    }
-
-    50% {
-        transform: scale(1.5);
-    }
-
-    75% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+.search:focus {
+    padding: 12px 0 0 0;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #575756;
+    border-radius: 0;
+    background-position: 100% center;
 }

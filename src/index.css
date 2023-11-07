@@ -17,4 +17,5 @@ code {
   src: local("RobotoFlex"),
    url("./fonts/Roboto_Flex/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf") format("truetype");
   font-weight: all;
+  font-weight: extra;
   }
