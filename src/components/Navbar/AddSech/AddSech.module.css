@@ -1,0 +1,79 @@
+.plus_icon {
+  height: 25px;
+  margin: 6px 15px 0 0
+}
+
+.addSechButton {
+  display: flex;
+  justify-content: center;
+  line-height: 35px;
+  font-family: "RobotoFlex";
+  font-size: 22px;
+  font-weight: 200;
+  letter-spacing: 0.5px;
+  height: 40px;
+  width: 90%;
+  border: none;
+  margin: 0 5% 10px 5%;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  background: linear-gradient(180deg, rgba(1, 84, 209, 0.60) 0%, rgba(21, 69, 138, 0.60) 63.02%);
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.addSechButton:before {
+  content: '';
+  background: linear-gradient(45deg, rgb(0, 17, 255), rgb(0, 174, 255), #002bff);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.addSechButton:active {
+  color: #f7f7f7
+}
+
+.addSechButton:active:after {
+  background: transparent;
+}
+
+.addSechButton:hover:before {
+  opacity: 1;
+}
+
+.addSechButton:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(1, 84, 209, 0.479) 0%, rgba(21, 69, 138, 0.60) 63.02%);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}

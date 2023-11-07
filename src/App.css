@@ -6,16 +6,14 @@
     "n c";
   grid-template-rows: 1fr;
   grid-template-columns: 2fr 9fr;
-  grid-gap: 3px;
 
-  /* grid-gap: 10px; */
 }
 
 .sun{
   position: absolute;
   top: 212px;
   left: 595px;
-  height: 488px;
+  height: 100px;
   
 }
 
@@ -24,7 +22,7 @@
   margin-right: auto;
   top: 100px;
 
-  width: 1000px;
+  width: 100px;
 }
 
 .luch:hover{

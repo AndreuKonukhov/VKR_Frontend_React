@@ -4,13 +4,15 @@ import { NavLink } from "react-router-dom";
 import Logo from "./Logo/Logo";
 import User from "./User/User";
 import ListSech from "./ListSech/ListSech";
+import AddSech from "./AddSech/AddSech";
+
+
 const Navbar = () => {
     return (
         <nav className={s.Navbar}>
             <Logo/>  
-            
             <ListSech/>
-            <button class={s.glow_on_hover} type="button">Добавить сечение</button>
+            <AddSech/>
             <User/>
 
             {/* <div className={s.item}>
