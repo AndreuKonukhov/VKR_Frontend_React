@@ -43,30 +43,20 @@
     right: 80px;
     font-size: 35px;
     cursor: pointer;
-    color: #fff;
+    color: #ffffff;
     opacity: 0;
     transition: opacity 0.5s ease;
 }
 
-::-webkit-input-placeholder {
+::placeholder {
     /* Chrome/Opera/Safari */
-    color: #fff;
+    color: #ee3f3f;
     font-family: Roboto;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-::-moz-placeholder {
-    /* Firefox 19+ */
-    color: #fff;
-}
-
-:-ms-input-placeholder {
-    /* IE 10+ */
-    color: #fff;
-}
-
-.close_btn.active {
+.input.active {
     opacity: 1;
     animation: animate 0.5s linear;
 }
