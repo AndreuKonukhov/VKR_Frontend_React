@@ -7,11 +7,11 @@ import ListSech from "./ListSech/ListSech";
 import AddSech from "./AddSech/AddSech";
 
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <nav className={s.Navbar}>
             <Logo/>  
-            <ListSech/>
+            <ListSech seches={props.seches}/>
             <AddSech/>
             <User/>
 

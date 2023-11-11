@@ -1,0 +1,48 @@
+.nav {
+    height: 50px;
+    width: 96%;
+
+    border-radius: 5px;
+    background-color: rgb(94, 92, 92, 0.253);
+    margin: 4px 3px 4px 4px;
+    text-decoration: none;
+
+}
+
+.sech {
+    height: 100%; 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sechName{
+    color: rgb(214, 214, 214);
+    font-family: "RobotoFlex";
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    font-weight: lighter;
+    margin: 0 0 0 1rem ;
+}
+
+.countNN{
+    color: rgba(166, 170, 250, 0.562);
+    font-family: "RobotoFlex";
+    font-size: 24px;
+    font-weight: 600;
+    margin-left:auto
+}
+
+.img{
+    height: 25px;
+    margin: 0 1rem 0 0.5rem;
+}
+
+.activeSech{
+    height: 120%;
+    background-color: rgba(212, 11, 11, 0.253);
+    color: rgba(7, 8, 27, 0.562);
+    font-family: "RobotoFlex";
+}

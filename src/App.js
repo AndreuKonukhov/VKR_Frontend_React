@@ -9,23 +9,19 @@ import sun from './Resources/Center.png'
 import luch from './Resources/Luch.png'
 
 const App = (props) => {
+  
   return (
     <BrowserRouter>
       <div className='app-wriper'>
-        <Navbar />
+        <Navbar seches={props.state.navbar.seches} />
         {/* <div>
           <img className='sun' src = {sun}/>
           <img className='luch' src = {luch}/>
         </div> */}
-
+        
         <div>
           <Routes>
-            <Route path='newSech' element={<NewSech/>}/>
-            <Route path='/dialog' element={<Dialog sechen={props.state} />}/>
-            <Route path='/profile'element={<Profile sechen={props.state.seches} 
-                                                    newPostText = {props.state.newPostText}
-                                                    addSech={props.addSech}
-                                                    updateNewPostText={props.updateNewPostText}/>}/>
+            <Route path='/newSech' element={<NewSech newSechText={props.state.navbar.newSechText} dispatch={props.dispatch} />} />
           </Routes>
         </div>
       </div>

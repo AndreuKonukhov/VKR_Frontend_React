@@ -1,12 +1,10 @@
 import {combineReducers, legacy_createStore as createStore} from "redux";
-
-
+import navbarReducer from "./navbar-reducer"
 
 let reducers = combineReducers({
-    sechReducer,
-    topologyReducer,
+    navbar: navbarReducer,
 })
 
-let store = createStore();
+let store = createStore(reducers);
 
-export default store
+export default store;
