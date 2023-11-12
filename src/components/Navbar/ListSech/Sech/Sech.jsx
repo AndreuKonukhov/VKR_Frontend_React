@@ -4,8 +4,9 @@ import countNN_img from './countNN_icon.png'
 
 
 const Sech = (props) => {
+    let link = `/sech${props.nameSech}`
     return (
-        <NavLink to="/sech_1" activeClassName={s.activeSech} className={s.nav}>
+        <NavLink to={link} activeClassName={s.activeSech} className={ActiveLink()}>
             <div className={s.sech}>
                 <div className={s.sechName}>
                     {props.nameSech}
@@ -19,4 +20,9 @@ const Sech = (props) => {
     )
 }
 
+const ActiveLink = () => {
+    return (
+        select => select.isActive ? s.activeLink : s.nav
+    );
+}
 export default Sech;
