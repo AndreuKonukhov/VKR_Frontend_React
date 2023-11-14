@@ -7,7 +7,7 @@ let initialState = {
         {id: 2, nameSech: "Ангара - Запад", countNN: 1},
         {id: 3, nameSech: "Челябинское", countNN: 2},
     ],
-    newSechText: 'по умолчанию'
+    newSechNameText: 'по умолчанию'
 };
 
 const navbarReducer = (state = initialState, action) => {
@@ -16,19 +16,19 @@ const navbarReducer = (state = initialState, action) => {
         case ADD_SECH:{
             let newSech = {
                 id: 4,
-                nameSech: state.newSechText, 
+                nameSech: state.newSechNameText, 
                 countNN: 2
             };
             return {
                 ...state,
                 seches: [...state.seches, newSech],
-                newSechText: 'Сброс'
+                newSechNameText: 'Сброс'
             };
         }
         case UPDATE_NEW_SECH_TEXT: {
             return {
                 ...state,
-                newSechText: action.newText
+                newSechNameText: action.newText
             }
         }
         default:

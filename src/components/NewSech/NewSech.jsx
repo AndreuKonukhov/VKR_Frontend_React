@@ -2,21 +2,18 @@ import React from "react";
 import s from './NewSech.module.css'
 import header_img from './Header.jpg'
 import ContentNewSech from "./ContentNewSech/ContentNewSech";
-import {addSechActionCreator, updateNewSechTextActionCreator} from "../../redux/navbar-reducer";
 
 const NewSech = (props) => {
-    console.log(props)
-    
+
     let newSechElement = React.createRef();
 
-    let addSech = () => {
-        props.dispatch(addSechActionCreator());
+    let onAddSech = () => {
+        props.addSech();
     }
 
     let onNameSechChange = () => {
         let text = newSechElement.current.value;
-        let action = updateNewSechTextActionCreator(text);
-        props.dispatch(action);
+        props.updateNewNameSech(text);
     }
 
     return (
@@ -29,10 +26,10 @@ const NewSech = (props) => {
             <ContentNewSech />
             Выбрано КС:
             <textarea onChange={onNameSechChange} ref={newSechElement}
-                value={props.newSechText}/>
+                value={props.newSechNameText}/>
             Путь к директории СМЗУ
             {/* <ContentNewSech /> */}
-            <button onClick={addSech}>СОХРАНИТЬ
+            <button onClick={onAddSech}>СОХРАНИТЬ
             </button>
         </nav>
     )

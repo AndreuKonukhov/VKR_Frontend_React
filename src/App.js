@@ -1,12 +1,10 @@
 import logo from './logo.svg';
 import './App.css'
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
-import Dialog from './components/Dialog/Dialog';
-import NewSech from './components/NewSech/NewSech';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import sun from './Resources/Center.png'
 import luch from './Resources/Luch.png'
+import NewSechContainer from './components/NewSech/NewSechContainer';
 
 const App = (props) => {
   return (
@@ -18,11 +16,11 @@ const App = (props) => {
           <img className='luch' src = {luch}/>
         </div> */}
         
-        {/* <div>
+        <div>
           <Routes>
-            <Route path='/newSech' element={<NewSech newSechText={props.state.navbar.newSechText} dispatch={props.dispatch} />} />
+            <Route path='/newSech' element={<NewSechContainer/>} />
           </Routes>
-        </div> */}
+        </div>
       </div>
     </BrowserRouter>
   );

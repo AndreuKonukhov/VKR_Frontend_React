@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import s from './AddSech.module.css'
+import s from './AddSechButton.module.css'
 import plus from './plus_icon.png'
 
 const AddSech = () => {
