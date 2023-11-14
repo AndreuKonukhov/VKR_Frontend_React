@@ -40,11 +40,12 @@
 }
 
 .activeLink {
-    border-left: 4px solid rgb(31, 31, 127);
-    height: 50px;
+    border-left: 8px solid rgb(31, 31, 127);
+    height: 60px;
     width: calc(92% - 4px);
     border-radius: 5px;
     background-color: rgba(175, 175, 175, 0.253);
     margin: 4px 3px 4px 4px;
     text-decoration: none;
+    padding: 0 0 0 3%;
 }
