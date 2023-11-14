@@ -9,21 +9,20 @@ import sun from './Resources/Center.png'
 import luch from './Resources/Luch.png'
 
 const App = (props) => {
-  
   return (
     <BrowserRouter>
       <div className='app-wriper'>
-        <Navbar seches={props.state.navbar.seches} />
+        <Navbar/>
         {/* <div>
           <img className='sun' src = {sun}/>
           <img className='luch' src = {luch}/>
         </div> */}
         
-        <div>
+        {/* <div>
           <Routes>
             <Route path='/newSech' element={<NewSech newSechText={props.state.navbar.newSechText} dispatch={props.dispatch} />} />
           </Routes>
-        </div>
+        </div> */}
       </div>
     </BrowserRouter>
   );
