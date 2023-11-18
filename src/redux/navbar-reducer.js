@@ -1,6 +1,13 @@
+import axios from "axios";
+
 const ADD_SECH = 'ADD-SECH';
 const UPDATE_NEW_SECH_TEXT = 'UPDATE-NEW-SECH-TEXT';
 
+
+let a = axios.get("https://social-network.samuraijs.com/api/1.0/users").then(responce => {
+    let a = responce.items;
+});
+debugger
 let initialState = {
     seches: [
         {id: 1, nameSech: "Братск - Иркутск", countNN: 4},
@@ -17,18 +24,18 @@ const navbarReducer = (state = initialState, action) => {
             let newSech = {
                 id: 4,
                 nameSech: state.newSechNameText, 
-                countNN: 2
+                countNN: 0
             };
             return {
                 ...state,
-                seches: [...state.seches, newSech],
+                seches: [newSech, ...state.seches],
                 newSechNameText: 'Сброс'
             };
         }
         case UPDATE_NEW_SECH_TEXT: {
             return {
                 ...state,
-                newSechNameText: action.newText
+                newSechNameText: action.newText,
             }
         }
         default:
