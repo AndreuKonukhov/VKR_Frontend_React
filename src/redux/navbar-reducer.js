@@ -2,20 +2,20 @@ import axios from "axios";
 
 const ADD_SECH = 'ADD-SECH';
 const UPDATE_NEW_SECH_TEXT = 'UPDATE-NEW-SECH-TEXT';
+const SET_SECHES = 'SET_SECHES';
 
-
-let a = axios.get("https://social-network.samuraijs.com/api/1.0/users").then(responce => {
-    let a = responce.items;
-});
 debugger
 let initialState = {
-    seches: [
-        {id: 1, nameSech: "Братск - Иркутск", countNN: 4},
-        {id: 2, nameSech: "Ангара - Запад", countNN: 1},
-        {id: 3, nameSech: "Челябинское", countNN: 2},
-    ],
+    seches: [],
     newSechNameText: 'по умолчанию'
 };
+
+if (initialState.seches.length === 0) {
+    axios.get("http://127.0.0.1:8000/seches/")
+        .then(response => {
+            initialState.seches = response.data;
+        });
+}
 
 const navbarReducer = (state = initialState, action) => {
    
@@ -38,6 +38,9 @@ const navbarReducer = (state = initialState, action) => {
                 newSechNameText: action.newText,
             }
         }
+        case SET_SECHES: {
+            return { ...state, seches: [ ...state.seches, ...action.seches ]}
+        }
         default:
             return state;
     }
@@ -47,5 +50,5 @@ const navbarReducer = (state = initialState, action) => {
 export const addSechActionCreator = () => ({type: ADD_SECH})
 export const updateNewSechTextActionCreator = (text) =>
     ({type: UPDATE_NEW_SECH_TEXT, newText: text })
-
+export const setSeches = (seches) => ({type: SET_SECHES, seches })
 export default navbarReducer;

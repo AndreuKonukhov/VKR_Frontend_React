@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import ListSech from "./ListSech";
-
+import { setSeches } from "../../../redux/navbar-reducer";
 
 const mapStateToProps = (state) => {
     return {
@@ -10,6 +10,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        setSeches: (seches) => {
+            dispatch(setSeches(seches));
+        },    
     }
 }
 

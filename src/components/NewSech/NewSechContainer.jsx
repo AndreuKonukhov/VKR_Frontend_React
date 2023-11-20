@@ -1,10 +1,10 @@
 import {connect} from "react-redux";
 import NewSech from "./NewSech";
-import {updateNewSechTextActionCreator, addSechActionCreator} from "../../redux/navbar-reducer";
+import {updateNewSechTextActionCreator, addSechActionCreator, setSeches} from "../../redux/navbar-reducer";
 
 const mapStateToProps = (state) => {
     return {
-        newSechNameText: state.navbar.newSechNameText
+        newSechNameText: state.navbar.newSechNameText,
     }
 }
 
