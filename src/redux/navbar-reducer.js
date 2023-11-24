@@ -9,12 +9,12 @@ let initialState = {
     newSechNameText: 'по умолчанию'
 };
 
-//if (initialState.seches.length === 0) {
-//    axios.get("http://127.0.0.1:8000/seches/")
-//        .then(response => {
-//            initialState.seches = response.data;
-//        });
-//}
+if (initialState.seches.length === 0) {
+   axios.get("http://127.0.0.1:8000/seches/")
+       .then(response => {
+           initialState.seches = response.data;
+       });
+}
 
 const navbarReducer = (state = initialState, action) => {
    

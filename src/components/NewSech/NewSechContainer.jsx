@@ -1,22 +1,19 @@
 import {connect} from "react-redux";
 import NewSech from "./NewSech";
-import {updateNewSechTextActionCreator, addSechActionCreator, setSeches} from "../../redux/navbar-reducer";
+import {updateNewSechActionCreator} from "../../redux/newsech-reducer";
 
 const mapStateToProps = (state) => {
     return {
-        newSechNameText: state.navbar.newSechNameText,
+        newSechName: state.newsech.selectedNewSech,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         updateNewNameSech: (text) => {
-            let action = updateNewSechTextActionCreator(text);
+            let action = updateNewSechActionCreator(text);
             dispatch(action);
         },
-        addSech: () => {
-            dispatch(addSechActionCreator());
-        }
     }
 }
 

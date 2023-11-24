@@ -57,3 +57,10 @@
   margin-top: 25px;
   margin-right: 1px;
 }
+
+.ant:disabled{
+  background-color: rgb(147, 147, 147);
+}
+
+
+

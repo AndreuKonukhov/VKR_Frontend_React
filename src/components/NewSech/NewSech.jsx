@@ -32,8 +32,9 @@ class NewSech extends React.Component {
                     
 
                 <div className={s.content}>
-                    <SelectSech />
-                    <UploadFactors />
+                    <SelectSech newSechName={this.props.newSechName}
+                                updateNewNameSech={this.props.updateNewNameSech}/>
+                    <UploadFactors newSechName={this.props.newSechName}/>
 
                     {/* <Button icon={<PlusOutlined />}
                     className={s.button}
