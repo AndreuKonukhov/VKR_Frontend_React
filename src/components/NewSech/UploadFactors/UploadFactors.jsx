@@ -8,67 +8,83 @@ import img from './img.png'
 
 const UploadFactors = () => {
 
-    const [drag, setDrag] = useState(false)
+    const [fileList, setFileList] = useState([]);
+    const [uploading, setUploading] = useState(false);
+    const handleUpload = () => {
+        //Создаем форму для отправки http
+        const formData = new FormData();
+        // Добавляем в форму первый файл
+        formData.append('file', fileList[0]);
+        // Делаем кнопку серой
+        setUploading(true);
+        console.log(fileList)
+        // Использую axios, но можно и другое
+        axios.post('http://127.0.0.1:8000/factors/upload', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        }).then((resp) => resp.message)
+            .then(() => {
 
-    function dragStartHandler(e) {
-        e.preventDefault()
-        setDrag(true)
-    }
-
-    function dragLeaveHandler(e) {
-        e.preventDefault()
-        setDrag(false)
-    }
-
-    function onDropHandler(e) {
-        e.preventDefault()
-        let files = [...e.dataTransfer.files]
-        console.log(files[0])
-        const formData = new FormData()
-        formData.append('file', files[0])
-        axios.post('http://127.0.0.1:8000/factors/',)
-
-        setDrag(false)
-    }
+                setFileList([]);
+                message.success('upload successfully.');
+            })
+            .catch(() => {
+                message.error('upload failed.');
+            })
+            .finally(() => {
+                setUploading(false);
+            });
+    };
+    const props = {
+        onRemove: (file) => {
+            const index = fileList.indexOf(file);
+            const newFileList = fileList.slice();
+            newFileList.splice(index, 1);
+            setFileList(newFileList);
+        },
+        beforeUpload: (file) => {
+            console.log(file.type)
+            const isPNG = file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+            if (!isPNG) {
+                message.error(`${file.name} не является CSV файлом`);
+                return isPNG || Upload.LIST_IGNORE;
+            }
+            setFileList([...fileList, file]);
+            return false;
+        },
+        fileList,
+    };
 
     return (
         <div className={s.upload_factors}>
             <div className={s.text}>
-                Влияющие факторы
-                <Tooltip title="prompt text">
+                файл влияющих факторов
+                <Tooltip title="Ожидается загрузка файла .csv с влияющими факторами.
+                    О необходимой структуре файла см. в руководстве ПО">
                     <img src={img} className={s.img} />
                 </Tooltip>
             </div>
-            <div className={s.iwantfile}>
-                {drag
-                    ? <div onDragStart={e => dragStartHandler(e)}
-                        onDragLeave={e => dragLeaveHandler(e)}
-                        onDragOver={e => dragStartHandler(e)}
-                        onDrop = {e => onDropHandler(e)}
-                        className={s.drop}>Отпуcтите файлы</div>
-                    : <div
-                        onDragStart={e => dragStartHandler(e)}
-                        onDragLeave={e => dragLeaveHandler(e)}
-                        onDragOver={e => dragStartHandler(e)}
-                        className={s.drag}>Перетащите файлы в область</div>
-                }
-            </div>
-            <input />
-            {/* <img src={lines_img} className={s.lines_img} /> */}
-
-
-
-
-            {/* <Upload {...prop} 
-            action={"http://localhost:8000/sches/"}
-            >
-                <Button icon={<UploadOutlined />}
-                    style={{background: "#e0e0e0",
+            <Upload {...props}>
+                <Button icon={<UploadOutlined />} style={{
+                    background: "#e0e0e0",
                     width: 500,
-                    height: 35,}}>
-                    Загрузите файл с факторами
+                    height: 35,
+                }}>Выберите файл</Button>
+            </Upload>
+            <div className={s.buttonSave}>
+                <Button
+                    type="primary"
+                    onClick={handleUpload}
+                    disabled={fileList.length === 0}
+                    loading={uploading}
+                    style={{
+                        margin: "top"
+                    }}
+                >
+                    {uploading ? 'Uploading' : 'Сохранить'}
                 </Button>
-            </Upload> */}
+            </div>
         </div>
     )
 }

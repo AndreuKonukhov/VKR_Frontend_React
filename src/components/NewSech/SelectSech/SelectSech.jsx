@@ -9,7 +9,7 @@ const result = await axios.get(url);
 let sechElements = result.data.map(p => {
     return {
         label: p.server_name,
-        options: p.seches.map(sech => { return { label: sech.name_sech, value: sech.name_sech } })
+        options: p.seches.map(sech => { return { label: `(${sech.num_sech})  ${sech.name_sech}`, value: sech.name_sech } })
     }
 })
 
