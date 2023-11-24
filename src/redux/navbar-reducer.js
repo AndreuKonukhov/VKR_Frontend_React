@@ -4,7 +4,6 @@ const ADD_SECH = 'ADD-SECH';
 const UPDATE_NEW_SECH_TEXT = 'UPDATE-NEW-SECH-TEXT';
 const SET_SECHES = 'SET_SECHES';
 
-debugger
 let initialState = {
     seches: [],
     newSechNameText: 'по умолчанию'

@@ -5,8 +5,8 @@
   grid-template-areas:
     "n c";
   grid-template-rows: 1fr;
-  grid-template-columns: 2fr 10fr;
-  background: #343434;
+  grid-template-columns: 2.5fr 10fr;
+  background: #292929;
   z-index: 1;
 
 }

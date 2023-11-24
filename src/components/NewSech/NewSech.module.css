@@ -1,37 +1,48 @@
-.newSech {
+.content{
+  z-index: 99;
+}
 
+
+.newSech {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  background: url("lines.png");
+  background-position: 0  100% ;
+  background-repeat:no-repeat;
+  background-size: 100% 90%;
 }
 
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 10vh;
   width: 100%;
   color: #e0e0e0;
   font-family: "RobotoFlex";
   font-size: 32px;
   font-weight: 400;
   letter-spacing: 2px;
+  z-index: 0;
   /* background-image: url("https://kartinkof.club/uploads/posts/2022-09/1662184235_5-kartinkof-club-p-novie-i-krasivie-kartinki-neiroseti-5.jpg"); */
 }
 
 .header_img{
   position: absolute;
-  width: 100rem;
-  height: 100px;
+  width: 80%;
+  height: 10%;
   overflow: hidden;
   object-fit: cover;
   z-index: 0;
-  filter: grayscale(90%);
-  opacity: 0.2;
+  filter: grayscale(50%);
+  opacity: 0.07;
 }
 
 .text{
 z-index: 0;
 }
+
+
+

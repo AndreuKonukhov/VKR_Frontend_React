@@ -1,19 +1,12 @@
-import s from './ListSech.module.css'
+import s from './ListSech.module.css';
 import Sech from "./Sech/Sech";
 import axios from "axios";
 
 const ListSech = (props) => {
-    debugger
-    if (props.seches.length === 0) {
-        axios.get("http://127.0.0.1:8000/seches/")
-            .then(response => {
-                props.setSeches(response.data);
-            });
-    }
-    console.log(props.seches)
 
+    //console.log(props.seches)
 
-    let sechElements = props.seches?.map(p => <Sech nameSech={p.sech_name_view} countNN={p.countNN} />);
+    let sechElements = props.seches?.map(p => <Sech nameSech={p.sech_name} countNN={p.count_topology} />);
 
     return (
         <div className={s.seches}>
