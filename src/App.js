@@ -5,6 +5,8 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import sun from './Resources/Center.png'
 import luch from './Resources/Luch.png'
 import NewSechContainer from './components/NewSech/NewSechContainer';
+import StartedPage from './components/StartedPage/StartedPage';
+import SelectedSechContainer from './components/SelectedSech/SelectedSechContainer';
 
 const App = (props) => {
   return (
@@ -18,7 +20,10 @@ const App = (props) => {
         
         <div>
           <Routes>
+            <Route path='' element={<StartedPage/>} />
             <Route path='/newSech' element={<NewSechContainer/>} />
+            <Route path='/sech/:sech_num' element={<SelectedSechContainer/>} />
+
           </Routes>
         </div>
       </div>

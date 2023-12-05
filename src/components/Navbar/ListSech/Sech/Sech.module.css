@@ -1,12 +1,16 @@
 .nav {
-    height: 50px;
+    height: 55px;
     width: 92%;
 
     border-radius: 5px;
-    background-color: rgb(94, 92, 92, 0.253);
+    background-color: rgb(94, 92, 92, 0.17);
     margin: 4px 3px 4px 4px;
     text-decoration: none;
     padding:  0 0 0 4%;
+}
+
+.nav:hover {
+    background-color: rgba(103, 101, 101, 0.35);
 }
 
 .sech {
@@ -18,17 +22,16 @@
     align-items: center;
 }
 
+
 .sechName{
     color: rgb(214, 214, 214);
-    font-family: "RobotoFlex";
-    font-size: 14px;
-    letter-spacing: 1.5px;
+    font-size: 15px;
+    letter-spacing: 1px;
     font-weight: lighter;
 }
 
 .countNN{
     color: rgba(166, 170, 250, 0.562);
-    font-family: "RobotoFlex";
     font-size: 24px;
     font-weight: 600;
     margin-left:auto
@@ -41,7 +44,7 @@
 
 .activeLink {
     border-left: 8px solid rgb(31, 31, 127);
-    height: 60px;
+    height: 55px;
     width: calc(92% - 4px);
     border-radius: 5px;
     background-color: rgba(175, 175, 175, 0.253);

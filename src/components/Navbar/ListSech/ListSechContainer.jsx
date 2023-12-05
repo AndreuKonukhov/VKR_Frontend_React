@@ -1,6 +1,22 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import ListSech from "./ListSech";
-import { setSeches } from "../../../redux/navbar-reducer";
+import { getListSeches } from "../../../redux/navbar-reducer";
+import React,  { useEffect } from "react";
+
+
+function ListSechContainer(props) {
+    
+    useEffect(() => {
+        if (props.seches.length === 0){
+            props.getListSeches()
+        }
+    });
+
+    return (
+        <ListSech seches={props.seches} />
+    )
+}
+
 
 const mapStateToProps = (state) => {
     return {
@@ -8,14 +24,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setSeches: (seches) => {
-            dispatch(setSeches(seches));
-        },    
-    }
-}
 
-const ListSechesContainer = connect(mapStateToProps, mapDispatchToProps)(ListSech);
+const ListSechesContainer = connect(mapStateToProps, { getListSeches })(ListSechContainer);
+
 
 export default ListSechesContainer;

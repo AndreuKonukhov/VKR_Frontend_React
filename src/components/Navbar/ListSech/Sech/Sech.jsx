@@ -1,12 +1,20 @@
 import { NavLink } from "react-router-dom";
 import s from './Sech.module.css'
 import countNN_img from './countNN_icon.png'
+import React from "react";
 
 
-const Sech = (props) => {
-    let link = `/sech${props.nameSech}`
+let Sech = (props) => {
+
+    let link = `/sech/${props.id}`
+
+    let ActiveLink = () => {
+        return (
+            select => select.isActive ? s.activeLink : s.nav
+        );
+    }
     return (
-        <NavLink to={link} activeClassName={s.activeSech} className={ActiveLink()}>
+        <NavLink to={link} activeclassname={s.activeSech} className={ActiveLink()}>
             <div className={s.sech}>
                 <div className={s.sechName}>
                     {props.nameSech}
@@ -18,11 +26,5 @@ const Sech = (props) => {
             </div>
         </NavLink>
     )
-}
-
-const ActiveLink = () => {
-    return (
-        select => select.isActive ? s.activeLink : s.nav
-    );
 }
 export default Sech;

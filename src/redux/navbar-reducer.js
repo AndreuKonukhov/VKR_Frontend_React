@@ -1,4 +1,4 @@
-import axios from "axios";
+import { API } from "../api/api";
 
 const ADD_SECH = 'ADD-SECH';
 const UPDATE_NEW_SECH_TEXT = 'UPDATE-NEW-SECH-TEXT';
@@ -9,20 +9,13 @@ let initialState = {
     newSechNameText: 'по умолчанию'
 };
 
-if (initialState.seches.length === 0) {
-   axios.get("http://127.0.0.1:8000/seches/")
-       .then(response => {
-           initialState.seches = response.data;
-       });
-}
-
 const navbarReducer = (state = initialState, action) => {
-   
-    switch(action.type) {
-        case ADD_SECH:{
+
+    switch (action.type) {
+        case ADD_SECH: {
             let newSech = {
                 id: 4,
-                nameSech: state.newSechNameText, 
+                nameSech: state.newSechNameText,
                 countNN: 0
             };
             return {
@@ -37,8 +30,10 @@ const navbarReducer = (state = initialState, action) => {
                 newSechNameText: action.newText,
             }
         }
+
         case SET_SECHES: {
-            return { ...state, seches: [ ...state.seches, ...action.seches ]}
+            console.log(action, "вот action")
+            return { ...state, seches: action.seches }
         }
         default:
             return state;
@@ -46,8 +41,24 @@ const navbarReducer = (state = initialState, action) => {
 }
 
 
-export const addSechActionCreator = () => ({type: ADD_SECH})
+export const addSechActionCreator = () => ({ type: ADD_SECH })
 export const updateNewSechTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_SECH_TEXT, newText: text })
-export const setSeches = (seches) => ({type: SET_SECHES, seches })
+    ({ type: UPDATE_NEW_SECH_TEXT, newText: text })
+export const setSeches = (seches) => ({ type: SET_SECHES, seches })
+
+//Thunks
+export const getListSeches = () => (dispatch) => {
+    API.getSechesNavbar().
+        then(response => {
+            console.log(response)
+            if (response.status == 200) {
+                dispatch(setSeches(response.data))
+                console.log("Загружен перечень сечений в navbar", response.data)
+            }
+        })
+        .catch(error => {
+            console.log("Ошибка запроса сечений", error.message)
+        })
+}
+
 export default navbarReducer;

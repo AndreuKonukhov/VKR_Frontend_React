@@ -1,66 +1,35 @@
-.upload_factors{
-  z-index: 53;
-}
 
-.text{
+.text {
   color: #e0e0e0;
-  font-family: "RobotoFlex";
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 100;
   letter-spacing: 1px;
-  margin: 3% 0 5px 10px;
+  margin: 5% 0 5px 10px;
 }
 
-.img{
+.img_question {
   margin: 0 0 0 5px;
   height: 15px;
   opacity: 0.9;
 }
-.drag{
-  width: 30vh;
-  height: 200px;
-  background: #c22a2a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.drop{
-  width: 30vh;
-  height: 200px;
-  background: rgb(226, 223, 223);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.iwantfile{
-  background: rgb(22, 197, 57);
-}
-
-
-.lines_img{
-  position: absolute;
-  filter: grayscale(90%);
-  opacity: 0.05;
-  height: 90%;
-  width: 85%;
-  min-width: 74vh;
-  max-width: 200vh;
-  margin: -30% 0 0 -55%;
-  z-index: 0;
-}
-
-.buttonSave{
+.buttonSave {
   display: flex;
   justify-content: flex-end;
   margin-top: 25px;
-  margin-right: 1px;
 }
 
-.ant:disabled{
+.ant:disabled {
   background-color: rgb(147, 147, 147);
+  color: rgb(78, 78, 78);
 }
 
+.upl {
+  color: #5b8f41;
+}
 
-
+.button_upload {
+  background: "#e0e0e0";
+  width: 500px;
+  height: 35px;
+}

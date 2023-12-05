@@ -1,0 +1,53 @@
+.content{
+    height: 28vh;
+    width: 100%;
+
+    background-color: rgba(14, 14, 14, 0.5);
+    border-radius: 0 0 20px 20px;
+    border-color: rgb(237, 237, 236);
+    /* border-width: 50px; */
+    z-index: 1;
+
+}
+
+.name_row{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 10vh;
+    margin-left: 2%;
+
+}
+
+.sech_name{
+    margin-left: 1%;
+    color: rgb(253, 98, 98);
+    font-size: 34px;
+    letter-spacing: 0px;
+    font-weight: 400;
+    z-index: 1;
+}
+
+.sech_text{
+    color: rgb(222, 222, 222, 0.4);
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.edit{
+    color: rgb(243, 144, 144);
+    
+    font-size: 26px;
+    font-weight: 100;
+    text-decoration: none;
+}
+
+.edit:hover{
+    background: rgb(243, 155, 155, 0.2);
+    border-radius: 5px;
+}
+
+.edit_link{
+    margin-left: 1%;
+}

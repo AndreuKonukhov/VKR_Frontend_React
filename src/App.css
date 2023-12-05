@@ -8,7 +8,7 @@
   grid-template-columns: 2.5fr 10fr;
   background: #292929;
   z-index: 1;
-
+  font-family: "RobotoFlex";
 }
 
 .sun{
