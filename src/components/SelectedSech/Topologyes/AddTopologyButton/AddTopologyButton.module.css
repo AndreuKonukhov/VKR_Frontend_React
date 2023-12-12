@@ -1,0 +1,22 @@
+.button{
+    margin-left: 1%;
+}
+
+.button_delete{
+    height: auto;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(1, 84, 209, 0.60) 0%, rgba(21, 69, 138, 0.60) 63.02%);
+    color: rgb(216, 216, 216);
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 300;
+   
+    border-radius: 10px;
+    border:rgba(173, 173, 173, 0.329);
+    border-width: 0.5px;
+    border-style: solid;
+}
+
+.button_delete:hover{
+    background: linear-gradient(180deg, rgba(1, 84, 209) 0%, rgba(21, 69, 138, 1) 63.02%);
+}

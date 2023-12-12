@@ -7,7 +7,7 @@ import React,  { useEffect } from "react";
 function ListSechContainer(props) {
     
     useEffect(() => {
-        if (props.seches.length === 0){
+        if (props.seches === null){
             props.getListSeches()
         }
     });

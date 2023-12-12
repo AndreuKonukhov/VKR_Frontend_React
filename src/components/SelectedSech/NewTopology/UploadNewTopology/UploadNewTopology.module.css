@@ -1,0 +1,43 @@
+
+.text {
+  color: #e0e0e0;
+  font-size: 15px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  margin: 1% 0 5px 10px;
+}
+
+.img_question {
+  margin: 0 0 0 5px;
+  height: 15px;
+  opacity: 0.9;
+}
+
+
+
+.dragger{
+  background: #81818163;
+  border-radius: 5px;
+  height: 7vw;
+  width: min(80%, 60vh);
+}
+
+.ant_upload_up{
+  color: #e0e0e0;
+  font-size: 14px;
+  font-weight: 200;
+  margin-top: -1%;
+  letter-spacing: 1px;
+}
+
+.ant_upload_down{
+  color: rgba(135, 138, 226, 0.685);
+  font-weight: 200;
+  margin-top: -2%;
+  letter-spacing: 1px;
+}
+
+.icon{
+  color: rgba(135, 138, 226, 0.856);
+  font-size: 210%;
+}

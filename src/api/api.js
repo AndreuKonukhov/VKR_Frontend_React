@@ -7,18 +7,28 @@ const instance = axios.create({
 
 export const API = {
     getSelectedSech(sech_num) {
-        return instance.get(`http://127.0.0.1:8000/seches/` + sech_num);
+        return instance.get(`seches/` + sech_num);
     },
 
     getSechesNavbar() {
-        return instance.get("http://127.0.0.1:8000/seches/");
+        return instance.get("seches/");
     },
 
     getSechSelect() {
-        return instance.get("http://127.0.0.1:8000/sech_list/");
+        return instance.get("sech_list/");
     },
 
     deleteSech(sech_num) {
-        return instance.delete(`http://localhost:8000/sech/delete/` + sech_num);
+        return instance.delete(`sech/delete/` + sech_num);
     },
+
+    checkFileTopology(file) {
+        const formData = new FormData();
+        formData.append('file', file);
+        return instance.post('/newTopology/checkFileTopology/', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+    }
 }

@@ -5,7 +5,7 @@ const UPDATE_NEW_SECH_TEXT = 'UPDATE-NEW-SECH-TEXT';
 const SET_SECHES = 'SET_SECHES';
 
 let initialState = {
-    seches: [],
+    seches: null,
     newSechNameText: 'по умолчанию'
 };
 
@@ -32,7 +32,6 @@ const navbarReducer = (state = initialState, action) => {
         }
 
         case SET_SECHES: {
-            console.log(action, "вот action")
             return { ...state, seches: action.seches }
         }
         default:
@@ -50,10 +49,9 @@ export const setSeches = (seches) => ({ type: SET_SECHES, seches })
 export const getListSeches = () => (dispatch) => {
     API.getSechesNavbar().
         then(response => {
-            console.log(response)
             if (response.status == 200) {
                 dispatch(setSeches(response.data))
-                console.log("Загружен перечень сечений в navbar", response.data)
+                console.log(`Загружены сечения в Navbar:`, response.data)
             }
         })
         .catch(error => {

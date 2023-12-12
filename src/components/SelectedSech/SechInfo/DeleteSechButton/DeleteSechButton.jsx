@@ -33,7 +33,8 @@ const DeleteSechButton = (props) => {
                 cancelText="Нет"
             >
                 <Button icon={<DeleteOutlined />}
-                    className={s.button_delete}>
+                    className={s.button_delete}
+                    type="primary">
                     Удалить сечение
                 </Button>
             </Popconfirm>

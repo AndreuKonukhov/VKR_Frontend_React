@@ -6,8 +6,7 @@
     "n c";
   grid-template-rows: 1fr;
   grid-template-columns: 2.5fr 10fr;
-  background: #292929;
-  z-index: 1;
+  background: #292929e7;
   font-family: "RobotoFlex";
 }
 

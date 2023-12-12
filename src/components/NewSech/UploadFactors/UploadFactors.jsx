@@ -56,7 +56,7 @@ const UploadFactors = (props) => {
         formData.append('file', file);
         // Делаем кнопку серой
         setUploading(true);
-        console.log(props.newSechName)
+
         // Использую axios, но можно и другое
         axios.post('http://127.0.0.1:8000/factors/upload', formData, {
             headers: {

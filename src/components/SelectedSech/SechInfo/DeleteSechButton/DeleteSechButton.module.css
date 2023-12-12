@@ -5,11 +5,12 @@
 
 .button_delete{
     height: 40px;
-    background: linear-gradient(180deg, rgb(252, 4, 4), rgb(168, 36, 36));
-    color: rgb(190, 189, 189);
+    background: linear-gradient(180deg, rgba(241, 41, 41, 0.678), rgba(172, 75, 75, 0.849));
+    color: rgb(216, 215, 215);
     font-size: 15px;
     letter-spacing: 1px;
     font-weight: 300;
+    border-radius: 10px;
     border: none;
 }
 

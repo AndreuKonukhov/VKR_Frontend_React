@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import SelectedSech from './SelectedSech';
-import { getSech, deleteSech } from '../../redux/selectedsech-reducer';
+import { getSech, deleteSech, setNewTopology, checkFileTopology } from '../../redux/selectedsech-reducer';
 
-function SelectedPageCont(props) {
+function SelectedSechCont(props) {
     let { sech_num } = useParams();
-    console.log(props)
+
     useEffect(() => {
         props.getSech(sech_num)
     }, [sech_num]);
@@ -14,14 +14,17 @@ function SelectedPageCont(props) {
     return (
         <div>
             <SelectedSech deleteSech={props.deleteSech}
-                sech={props.sech} />
+                sech_num = {sech_num}
+                checkFileTopology = {props.checkFileTopology}
+                setNewTopology={props.setNewTopology}
+                state={props.state} />
         </div>
     );
 }
 
 let mapStateToProps = (state) => ({
-    sech: state.selectedsech.sech
+    state: state.selectedsech
 })
 
-const SelectedPageContainer = connect(mapStateToProps, { getSech, deleteSech })(SelectedPageCont)
-export default SelectedPageContainer
+const SelectedSechContainer = connect(mapStateToProps, { getSech, deleteSech, setNewTopology, checkFileTopology })(SelectedSechCont)
+export default SelectedSechContainer

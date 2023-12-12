@@ -3,14 +3,14 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  filter: grayscale(10%);
+  filter: grayscale(70%);
   
 }
 
 .text {
   color: rgb(214, 214, 214, 0.3);
   font-size: 60px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-weight: 500;
   z-index: 1;
 
