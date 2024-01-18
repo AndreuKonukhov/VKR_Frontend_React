@@ -1,0 +1,13 @@
+.text {
+    color: #ecebeb;
+    font-size: 15px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    margin: 5px 0 5px 10px;
+  }
+  
+  .img_question {
+    margin: 0 0 0 5px;
+    height: 15px;
+    opacity: 0.9;
+  }

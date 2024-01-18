@@ -11,7 +11,7 @@ const Navbar = () => {
     return (
         <nav className={s.Navbar}>
             <Logo />
-            <ListSechContainer/>
+            <ListSechContainer />
             <AddSech />
             <User />
         </nav>

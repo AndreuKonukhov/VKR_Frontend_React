@@ -7,7 +7,8 @@ const Topologyes = (props) => {
         <div className={s.content}>
             <div className={s.topolog}>
                 <span>Топологии сети</span>
-                <AddTopologyButton setNewTopology={props.setNewTopology}/>
+                <AddTopologyButton setNewTopology={props.setNewTopology}
+                    deleteCheckTopology={props.deleteCheckTopology} />
             </div>
         </div>
     )

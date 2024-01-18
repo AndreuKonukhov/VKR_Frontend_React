@@ -10,10 +10,13 @@ const SelectedSech = (props) => {
         if (props.state.newTopology) {
             return <NewTopology setNewTopology={props.setNewTopology}
                 checkFileTopology={props.checkFileTopology} 
-                sech_num={props.sech_num}/>
+                sech_num={props.sech_num}
+                checkTopology={props.state.checkTopology} 
+                deleteCheckTopology={props.deleteCheckTopology}/>
         }
         else {
-            return <Topologyes setNewTopology={props.setNewTopology} />
+            return <Topologyes setNewTopology={props.setNewTopology} 
+            deleteCheckTopology={props.deleteCheckTopology}/>
         }
     }
 

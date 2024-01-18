@@ -1,0 +1,26 @@
+.content{
+    display: flex;
+    align-items: center;
+    margin: 3px 2px;
+    background: rgba(22, 22, 22, 0.644);
+    border-radius: 6px;
+}
+
+.content:hover{
+    background: rgba(22, 22, 22, 0.76);
+}
+
+
+.icon{
+    height: 25px;
+    margin-left: 6px;
+    color: rgba(209, 144, 58, 0.747);
+}
+
+.text{
+    color: rgba(214, 214, 214, 0.747);
+    font-size: 13px;
+    font-weight: 200;
+    margin-left: 6px;
+    letter-spacing: 0.5px;
+}

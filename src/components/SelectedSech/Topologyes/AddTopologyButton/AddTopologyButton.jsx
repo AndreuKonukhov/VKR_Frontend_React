@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom"
 const AddTopologyButton = (props) => {
 
     const setTop=() =>{
-        return props.setNewTopology(true)
+        props.deleteCheckTopology()
+        props.setNewTopology(true)
     }
 
     return (

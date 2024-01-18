@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import s from './UploadNewTopology.module.css'
-import axios from "axios";
-import { Tooltip, Button, message, Upload, ConfigProvider } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
-import img_question from './img.png'
-
+import { message, Upload, ConfigProvider } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
+import MyTooltip from "../../../Elements/MyTooltip/MyTooltip";
 
 const UploadNewTopology = (props) => {
 
@@ -25,7 +22,6 @@ const UploadNewTopology = (props) => {
         name: 'file',
         multiple: false,
         onChange(info) {
-            // console.log(info)
             const { status } = info.file;
             if (status !== 'uploading') {
                 // console.log(info.file, info.fileList);
@@ -51,6 +47,10 @@ const UploadNewTopology = (props) => {
             setFileList([...fileList, file]);
             return false;
         },
+
+        onRemove: () => {
+            props.deleteCheckTopology()
+        },
     };
 
     return (
@@ -62,20 +62,17 @@ const UploadNewTopology = (props) => {
                         fontFamily: "RobotoFlex",
                         controlHeightLG: 1,
                     },
-                }}
-            >
-                <div className={s.text}>
-                    Файл RastrWin3 c необходимой топологией
-                    <Tooltip title="Инфо">
-                        <img src={img_question} className={s.img_question} />
-                    </Tooltip>
-                </div>
+                }}>
+                    
+                <MyTooltip text='Файл RastrWin3 c необходимой топологией'
+                question = 'Инфо'/>
+
                 <div className={s.dragger}>
-                    <Dragger {...prop}
+                    <Dragger {...prop} className={s.upl}
                         maxCount={1}
                         style={{ size: 'small' }}>
                         <InboxOutlined className={s.icon}/>
-                        <p className={s.ant_upload_up}>Кликните для выбора или перетащите в эту область файл</p>
+                        <p className={s.ant_upload_up}>Нажмите для выбора или перетащите в эту область файл</p>
                         <p className={s.ant_upload_down}>Поддерживаются файлы с шаблонами rg2, rst, os или "без шаблона" RastrWin3</p>
                     </Dragger>
                 </div>
@@ -83,7 +80,6 @@ const UploadNewTopology = (props) => {
 
             </ConfigProvider>
         </div>
-
     )
 }
 

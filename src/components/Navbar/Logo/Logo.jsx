@@ -4,8 +4,8 @@ import logo from './so.png'
 
 const Logo = () => {
     return (
-        <> 
-            <NavLink to='/' className={s.link}>
+        <>
+            <NavLink to={'/'} className={s.link}> 
                 <div className={s.logo}>
                     <img className={s.img}
                         src={logo}

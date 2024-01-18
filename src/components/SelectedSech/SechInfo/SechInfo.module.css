@@ -2,7 +2,7 @@
     height: 28vh;
     width: 100%;
 
-    background: linear-gradient(140deg, rgb(31, 30, 30), rgb(82, 82, 82));
+    background: linear-gradient(130deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
     border-radius: 0 0 20px 20px;
     border-width: 0 0 1px 0;
     border-style: solid;
@@ -29,7 +29,7 @@
 }
 
 .sech_text {
-    color: rgba(222, 222, 222, 0.548);
+    color: rgba(222, 222, 222, 0.692);
     font-size: 30px;
     letter-spacing: 2px;
     font-weight: 300;

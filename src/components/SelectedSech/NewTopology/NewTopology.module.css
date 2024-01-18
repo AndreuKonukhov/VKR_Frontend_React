@@ -31,6 +31,12 @@
     border-radius: 144px;
 }
 
+.area{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+}
+
 .newTopText {
     color: rgba(243, 242, 242, 0.815);
     letter-spacing: 1px;
@@ -40,8 +46,36 @@
     width: 60vh;
 }
 
-.area {
-    display: flex;
-    justify-content: center;
-    width: 50%;
+
+
+.remont_list{
+    margin-top: 40px;
+    background: rgba(128, 128, 128, 0.178);
+    border-color: rgba(0, 0, 0, 0.459);
+    border-style:solid;
+    border-width: 1px;
+    border-radius: 6px;
+}
+
+.remont_list_text{
+    margin: 6px;
+    color: rgba(214, 214, 214, 0.925);
+    font-size: 16px;
+    font-weight: 200;
+    margin-left: 6px;
+    letter-spacing: 1px;
+}
+
+
+.saveButton{
+    margin-top: 40px;
+    align-self: self-end;
+}
+
+.selectCount{
+    margin-top: 30px;
+}
+
+.selectCriteria{
+    margin-top: 30px;
 }

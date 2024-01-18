@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import s from './UploadFactors.module.css'
 import axios from "axios";
-import { Tooltip, Button, Select, message, Upload, ConfigProvider } from 'antd';
+import { Button, Select, message, Upload, ConfigProvider } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import img_question from './img.png'
 import { useNavigate } from "react-router-dom";
-import { rerenderInfoSeches } from "../../Navbar/ListSech/ListSechContainer";
+import MyTooltip from "../../Elements/MyTooltip/MyTooltip";
 
 
 const UploadFactors = (props) => {
@@ -35,16 +34,16 @@ const UploadFactors = (props) => {
                 id: props.selectedNewSech[0],
                 sech_name: props.selectedNewSech[1]
             }).then(() => {
-                sendFile()                
+                sendFile()
             })
             .catch((ex) => {
-                if (ex.response.status==400){
+                if (ex.response.status == 400) {
                     message.error(`Сечение ${props.selectedNewSech[1]} 
                     уже существует`);
                 }
-                else{
+                else {
                     message.error('Ошибка создания сечения');
-                }           
+                }
             })
 
     }
@@ -65,7 +64,7 @@ const UploadFactors = (props) => {
         }).then((resp) => resp.message)
             .then(() => {
                 setFileList([]);
-                
+
                 props.getListSeches()
                 navigate(`/`)
                 message.success(`Сечение ${props.selectedNewSech[1]} успешно добавлено`);;
@@ -109,7 +108,6 @@ const UploadFactors = (props) => {
 
 
     const onChange = (value) => {
-
         let value_list = value.split('~', 2)
         value_list[0] = Number(value_list[0])
         props.updateNewNameSech(value_list)
@@ -117,19 +115,13 @@ const UploadFactors = (props) => {
     };
 
     return (
-
         <div className={s.upload_factors}>
             <div className={s.selected}>
-                <div className={s.text}>
-                    Контролируемое сечение
-                    <Tooltip title="prompt text">
-                        <img src={img_question} className={s.img_question} />
-                    </Tooltip>
-                </div>
+                <MyTooltip text='Контролируемое сечение'
+                    question='Инфо' />
                 <Select
                     className={s.select}
                     placeholder="Выберите контролируемое сечение"
-                    showSearch
                     value={props.newSechName}
                     optionFilterProp="children"
                     filterOption={filterOption}
@@ -149,18 +141,16 @@ const UploadFactors = (props) => {
                     },
                 }}
             >
-                <div className={s.text}>
-                    Файл влияющих факторов
-                    <Tooltip title="Ожидается загрузка файла .csv с влияющими факторами.
-                    О необходимой структуре файла см. в руководстве ПО">
-                        <img src={img_question} className={s.img_question} />
-                    </Tooltip>
+                <div className={s.uploader}>
+                    <MyTooltip text='Файл влияющих факторов'
+                        question="Ожидается загрузка файла .csv с влияющими факторами.
+                    О необходимой структуре файла см. в руководстве ПО" />
+                    <Upload {...handler} className={s.upl} maxCount={1}>
+                        <Button icon={<UploadOutlined />}
+                            className={s.button_upload}>Выберите файл
+                        </Button>
+                    </Upload>
                 </div>
-                <Upload {...handler} className={s.upl} maxCount={1}>
-                    <Button icon={<UploadOutlined />}
-                        className={s.button_upload}>Выберите файл
-                    </Button>
-                </Upload>
                 <div className={s.buttonSave}>
                     <Button
                         className={s.ant}
@@ -168,6 +158,7 @@ const UploadFactors = (props) => {
                         onClick={saveNewSech}
                         disabled={!(fileList.length != 0 && props.selectedNewSech.length != 0)}
                         loading={uploading}>
+
                         {uploading ? 'Uploading' : 'Сохранить'}
                     </Button>
                 </div>

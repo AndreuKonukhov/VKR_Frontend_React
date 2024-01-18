@@ -5,6 +5,7 @@ import { getListSeches } from "./navbar-reducer";
 
 const SET_SECH = 'SET_SECH';
 const SET_CHECK_TOPOLOGY = 'SET_CHECK_TOPOLOGY';
+const DELETE_CHECK_TOPOLOGY = 'DELETE_CHECK_TOPOLOGY';
 const SET_NEW_TOPOLOGY = 'SET_NEW_TOPOLOGY';
 
 let initialState = {
@@ -26,6 +27,9 @@ const selectedSechReducer = (state = initialState, action) => {
         case SET_NEW_TOPOLOGY: {
             return { ...state, newTopology: action.newTopology }
         }
+        case DELETE_CHECK_TOPOLOGY: {
+            return { ...state, checkTopology: [] }
+        }
         default:
             return state;
     }
@@ -35,6 +39,7 @@ const selectedSechReducer = (state = initialState, action) => {
 
 export const setSech = (sech) => ({ type: SET_SECH, sech })
 export const setCheckTopology = (checkTopology) => ({ type: SET_CHECK_TOPOLOGY, checkTopology })
+export const deleteCheckTopology = () => ({ type: DELETE_CHECK_TOPOLOGY})
 export const setNewTopology = (newTopology) => ({ type: SET_NEW_TOPOLOGY, newTopology })
 
 //Thunks
@@ -61,6 +66,7 @@ export const deleteSech = (sech_num) => (dispatch) => {
 export const checkFileTopology = (file) => (dispatch) => {
     API.checkFileTopology(file).then((response) => {
         dispatch(setCheckTopology(response.data))
+
         message.success('Топология успешно проверена');
     }).catch(error => {
         if (error.response.status==400){

@@ -33,3 +33,11 @@
   width: 500px;
   height: 35px;
 }
+
+.selected{
+  margin-top: 60px;
+}
+
+.uploader{
+  margin-top: 30px;
+}

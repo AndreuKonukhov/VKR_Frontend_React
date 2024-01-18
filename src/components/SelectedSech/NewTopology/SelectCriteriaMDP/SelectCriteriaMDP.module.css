@@ -1,0 +1,18 @@
+.checkbox{
+    color: rgba(255, 255, 255, 0.712);
+}
+
+.group{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.content{
+    height: 50px;
+    background: rgba(0, 0, 0, 0.432);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
